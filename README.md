@@ -209,13 +209,14 @@ ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
 
 ## 🔄 Güncellemeler
 
-- Karakterler **tek tek** ve **uygulama kapanmadan** güncellenir: Postacı koliyi getirir, karakter koliye girer ve yeni
-  haliyle çıkar; kaydı ve verdiğin ad korunur. İlk değişiklik notunu kısa bir balonla söyler, balona tıklarsan tam liste
-  açılır.
+- Karakterler **tek tek**, **uygulama kapanmadan** ve **kendiliğinden** güncellenir (yeni sürüm 15 dakikada bir
+  denetlenir): Postacı koliyi koşarak getirir, karakter koliye girer ve yeni haliyle çıkar; kaydı ve verdiğin ad korunur.
+  İlk değişiklik notunu kısa bir balonla söyler, balona tıklarsan tam liste açılır.
 - Uygulamanın kendisi güncellenecekse boş bir an beklenir (oyun, video, toplantı ya da tam ekran yokken). Herkes kısa bir
   "tadilat" için kaybolur, mahalle yeniden açılır ve komşular kaldıkları yerde belirip "Mahalle yenilendi!" der.
-- **Ayarlar → Genel → Güncellemeler:** **Otomatik**, **Önce sor** (varsayılan: tepside "Yeni sürümler var" yazar, sen
-  onaylarsın) ya da **Kapalı**.
+- **Ayarlar → Genel → Güncellemeler:** uygulamanın kendi güncellemesi için **Otomatik** ya da **Önce sor** (varsayılan:
+  tepside "Yeni sürümler var" yazar, sen onaylarsın). **Kapalı** seçilirse hiçbir şey denetlenmez, karakterler de
+  güncellenmez.
 - Tepsi menüsündeki **Güncellemeler** bölümünde son güncellemeler ve **Şimdi denetle** bulunur.
 - Yalnızca imzalı sürümler kurulur; her paketin boyutu ve özeti indirildikten sonra doğrulanır.
 
@@ -224,7 +225,7 @@ ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
 ## 🔒 Gizlilik
 
 - **Hiçbir veri dışarı gönderilmez.** Uygulama yalnızca güncelleme denetimi için GitHub'daki sürüm listesine bağlanır
-  (açılıştan 90 sn sonra ve 6 saatte bir; güncellemeler **Kapalı** ise hiç bağlanmaz). İnternetin gidip geldiğini
+  (açılıştan 90 sn sonra ve 15 dakikada bir; güncellemeler **Kapalı** ise hiç bağlanmaz). İnternetin gidip geldiğini
   Windows'a sorar, kendisi bağlantı kurmaz. Hava durumu bile hayalidir.
 - **Klavye:** tuşların içeriği değil, yalnızca bir tuşa basıldığı an okunur (sen yazarken susmak için).
 - **Ses:** içerik değil, yalnızca sistem sesinin seviyesi okunur (ani seste irkilmek, müzikte kafa sallamak için).
