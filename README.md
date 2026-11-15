@@ -209,8 +209,8 @@ ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
 
 ## 🔄 Güncellemeler
 
-- Karakterler **tek tek**, **uygulama kapanmadan** ve **kendiliğinden** güncellenir (yeni sürüm 15 dakikada bir
-  denetlenir): Postacı koliyi koşarak getirir, karakter koliye girer ve yeni haliyle çıkar; kaydı ve verdiğin ad korunur.
+- Karakterler **tek tek**, **uygulama kapanmadan** ve **kendiliğinden** güncellenir (yeni sürüm yaklaşık 15 dakikada
+  bir denetlenir): Postacı koliyi koşarak getirir, karakter koliye girer ve yeni haliyle çıkar; kaydı ve verdiğin ad korunur.
   İlk değişiklik notunu kısa bir balonla söyler, balona tıklarsan tam liste açılır.
 - Uygulamanın kendisi güncellenecekse boş bir an beklenir (oyun, video, toplantı ya da tam ekran yokken). Herkes kısa bir
   "tadilat" için kaybolur, mahalle yeniden açılır ve komşular kaldıkları yerde belirip "Mahalle yenilendi!" der.
@@ -225,16 +225,27 @@ ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
 ## 🔒 Gizlilik
 
 - **Hiçbir veri dışarı gönderilmez.** Uygulama yalnızca güncelleme denetimi için GitHub'daki sürüm listesine bağlanır
-  (açılıştan 90 sn sonra ve 15 dakikada bir; güncellemeler **Kapalı** ise hiç bağlanmaz). İnternetin gidip geldiğini
-  Windows'a sorar, kendisi bağlantı kurmaz. Hava durumu bile hayalidir.
-- **Klavye:** tuşların içeriği değil, yalnızca bir tuşa basıldığı an okunur (sen yazarken susmak için).
+  (açılıştan 90 sn sonra ve yaklaşık 15 dakikada bir; liste değişmemişse yeniden indirilmez; güncellemeler **Kapalı**
+  ise hiç bağlanmaz). İnternetin gidip geldiğini Windows'a sorar, kendisi bağlantı kurmaz. Hava durumu bile hayalidir.
+- **Klavye ve fare kancası yok.** Uygulama tuşlara ya da tıklamalara sistem genelinde kanca takmaz; girdiyi geciktirmez,
+  araya girmez.
+- **Klavye:** hangi tuşa basıldığı hiç okunmaz. "Yazıyor" algısı yalnızca Windows'un bildirdiği son girdi zamanından
+  çıkarılır: son girdi zamanı ilerliyor ama imleç kıpırdamıyorsa yazıyorsun sayılır (sen yazarken susmak için). Bu algı
+  varsayılan olarak kapalıdır; Ayarlar'daki **Klavye tepkileri** seçeneğiyle açılır.
 - **Ses:** içerik değil, yalnızca sistem sesinin seviyesi okunur (ani seste irkilmek, müzikte kafa sallamak için).
-- **İmleç:** yalnızca konumu, şekli ve tıklamaların yeri ile zamanı okunur; tıklamalar alttaki pencereye normal şekilde
-  gider.
+- **İmleç:** yalnızca konumu, şekli ve fare tuşunun basılı olup olmadığı okunur; tıklamalar alttaki pencereye normal
+  şekilde gider.
 - **Pencere başlıkları:** yalnızca ilk açılıştaki soruya "Aç" dersen okunur ve yalnızca cihazda, bellekte işlenir.
   Banka, şifre, giriş ve gizli sekme gibi hassas pencerelerin başlıkları hiç işlenmez. Kayda yalnızca tür yazılır
   ("video", "oyun" gibi), başlığın kendisi asla.
 - Bunların hiçbiri diske, günlüğe ya da ağa gitmez.
+- **Günlük dosyası:** yalnızca uyarı ve hatalar `%APPDATA%\MasaustuMahallesi\logs` klasörüne yazılır (orası yazılamazsa
+  `%TEMP%\MasaustuMahallesi\logs`). En fazla 1 MB'tır, dolunca en eski kısım silinir; ağa gönderilmez. İçinde yalnızca
+  zaman, seviye ve teknik bilgi bulunur (örneğin "durum kaydı yazılamadı, dosya açılamadı"). Pencere başlıkları,
+  karakterlere verdiğin adlar, hitap, kullanıcı adın ve kullanıcı klasörünün yolu yazılmadan önce silinir.
+- **Kayıt uyarısı:** mahalle kayıtlarını diske yazamazsa (örneğin bir antivirüs engellerse) bir komşu seni uyarır,
+  tepside "Kayıtlar yazılamıyor" satırı çıkar; tıklayınca veri klasörünün yeri ve antivirüste nasıl izin verileceği
+  anlatılır.
 - **Dosyalar:** dosya taşıma kendiliğinden yapılmaz; Kâmil'in planı yalnızca senin onayınla uygulanır, her adım geri
   alınabilir, hiçbir dosya silinmez.
 
@@ -310,6 +321,6 @@ Masaüstü Mahallesi ("Desktop Neighborhood") is a small pixel-art neighborhood 
 Six neighbors (a librarian, a painter, a gamer, a grandpa, a mail carrier and a cat) walk along your taskbar and window
 title bars, greet each other, gather for afternoon tea and react to the windows, videos and games you open.
 It never steals focus, and every click outside the characters goes straight to the window underneath.
-Nothing leaves your computer: the app only contacts GitHub to check for signed updates, and it reads key-press timing,
-sound level and cursor position, never their content. Characters are updated one by one without closing the app,
+Nothing leaves your computer: the app only contacts GitHub to check for signed updates. It installs no keyboard or
+mouse hooks; it only reads the system's last-input time, sound level and cursor position, never their content. Characters are updated one by one without closing the app,
 delivered by the mail carrier in a little parcel; the interface and dialogue are in Turkish.
