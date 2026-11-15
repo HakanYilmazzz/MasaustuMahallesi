@@ -287,7 +287,7 @@ bütün monitörlerde aynı ölçeği seçebilirsin.
 <summary><b>Karakterleri nasıl kapatırım?</b></summary>
 
 **Ayarlar → Karakterler**'den istediğini kapatabilirsin (en az biri açık kalır). Kısa süreliğine herkesi göndermek için
-tepsiden **Herkes dışarı** yeter (varsayılan kısayol Ctrl+Alt+Shift+M); süre dolunca ya da çağırınca geri gelirler.
+tepsiden **Herkes dışarı** yeter (varsayılan kısayol Ctrl+Alt+Shift+M: 2 saniye içinde iki kez bas; bir kez basmak ekranı yeniler); süre dolunca ya da çağırınca geri gelirler.
 </details>
 
 <details>
