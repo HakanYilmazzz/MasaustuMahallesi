@@ -47,7 +47,8 @@ Karakterler**'den de değişir). Aşağıdaki açıklamalar kurulum ekranındaki
     <td align="center"><img src="docs/readme/rana.png" alt="Rana" width="112"><br><img src="docs/readme/rana.gif" alt="Rana mahalle sergisini açıyor" width="240"></td>
     <td>
       <h3>Rana – Ressam</h3>
-      Renklere ve açık pencerelere yorum yapar, ara sıra mahallede resim sergisi açar, fotoğraf çekilirken en öne geçer.
+      Renklere ve açık pencerelere yorum yapar, ara sıra mahallede resim sergisi açar, fotoğraf çekilirken en öne geçer
+      (Ayarlar'da "Ekran alıntısında: poz ver" seçiliyse).
       Neşeli ve hayalperest.
       <ul>
         <li><i>"Dur, kıpırdama! Seni çiziyorum."</i></li>
@@ -142,7 +143,8 @@ daralınca küçülür, sığmazsa kurur.
 
 Tanıdığı bir oyun başlayınca Okan elinde bayrakla oyunun yanında (oyun tam ekransa öteki monitörde) durur, bir iki
 komşu tribüne oturur. Rekabetçi bir oyun kapanınca "Kazandık mı?" diye sorarlar; kazandıysan konfeti. Bir videoyu birkaç
-dakika izlersen iki üç kişi izlemeye oturur, Okan'ın kucağında mısır olur. Müzik çalarken ritme göre kafa sallarlar.
+dakika izlersen iki üç kişi izlemeye oturur, Okan'ın kucağında mısır olur. **Ses tepkileri** açıksa (Ayarlar → Mahalle
+hayatı → Algı) müzik çalarken ritme göre kafa sallarlar.
 
 <p align="center"><img src="docs/readme/tribun.gif" alt="Oyun penceresinin yanında tribünde tezahürat" width="800"></p>
 
@@ -200,7 +202,9 @@ haliyle çıkar (ayrıntılar aşağıda).
 Yeni bir sürümün kurulum programını elle çalıştırırsan önceki karakter seçimin ve verdiğin adlar hazır gelir;
 kayıtların ve ayarların korunur.
 
-İlk açılışta kar küresi açılır ve komşular kendilerini tanıtır. Mahalleyi tepsi simgesinden (Luna'nın yüzü) yönetirsin.
+İlk açılışta kar küresi açılır ve komşular kendilerini tanıtır. Mahalleyi saatin yanındaki tepsi simgesinden (Luna'nın
+yüzü) yönetirsin: simgeye tıklayınca menü açılır, çift tıklayınca Ayarlar. Simgeyi göremiyorsan önce görev çubuğundaki
+**^** okuna tıkla; istersen Luna'yı oradan görev çubuğuna sürükleyebilirsin.
 
 **Kaldırma:** Windows **Ayarlar → Uygulamalar** içinden Masaüstü Mahallesi'ni kaldır. Windows ile başlat kaydı silinir;
 ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
@@ -215,9 +219,13 @@ ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
 - Uygulamanın kendisi güncellenecekse boş bir an beklenir (oyun, video, toplantı ya da tam ekran yokken). Herkes kısa bir
   "tadilat" için kaybolur, mahalle yeniden açılır ve komşular kaldıkları yerde belirip "Mahalle yenilendi!" der.
 - **Ayarlar → Genel → Güncellemeler:** uygulamanın kendi güncellemesi için **Otomatik** ya da **Önce sor** (varsayılan:
-  tepside "Yeni sürümler var" yazar, sen onaylarsın). **Kapalı** seçilirse hiçbir şey denetlenmez, karakterler de
-  güncellenmez.
-- Tepsi menüsündeki **Güncellemeler** bölümünde son güncellemeler ve **Şimdi denetle** bulunur.
+  sağ alt köşede küçük bir pencere sorar, haberci yanına gelir; **Sonra** dersen tepside bekler). **Kapalı** seçilirse
+  hiçbir şey denetlenmez, karakterler de güncellenmez.
+- Tepsi menüsündeki **Güncellemeler** bölümünde durum satırı, **Şimdi denetle** ve **Neler yeni…** (son 20 güncelleme)
+  bulunur.
+- Uygulamanın kurulumu yarıda kalırsa (örneğin bir antivirüs dosyayı kilitlerse) mahalle eski haliyle yeniden açılır ve
+  olay günlüğe yazılır; aynı sürüm iki kez kurulamazsa bir daha kendiliğinden denenmez, sana sorulur.
+- Bir karakter güncellemesi sorun çıkarırsa o sürüm bir daha kurulmaz; karakter önceki sürümüyle devam eder.
 - Yalnızca imzalı sürümler kurulur; her paketin boyutu ve özeti indirildikten sonra doğrulanır.
 
 ---
@@ -232,17 +240,20 @@ ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
 - **Klavye:** hangi tuşa basıldığı hiç okunmaz. "Yazıyor" algısı yalnızca Windows'un bildirdiği son girdi zamanından
   çıkarılır: son girdi zamanı ilerliyor ama imleç kıpırdamıyorsa yazıyorsun sayılır (sen yazarken susmak için). Bu algı
   varsayılan olarak kapalıdır; Ayarlar'daki **Klavye tepkileri** seçeneğiyle açılır.
-- **Ses:** içerik değil, yalnızca sistem sesinin seviyesi okunur (ani seste irkilmek, müzikte kafa sallamak için).
+- **Ses:** içerik değil, yalnızca sistem sesinin seviyesi okunur (ani seste irkilmek, müzikte kafa sallamak için). Bu
+  algı da varsayılan olarak kapalıdır; Ayarlar'daki **Ses tepkileri** seçeneğiyle açılır.
 - **İmleç:** yalnızca konumu, şekli ve fare tuşunun basılı olup olmadığı okunur; tıklamalar alttaki pencereye normal
   şekilde gider.
 - **Pencere başlıkları:** yalnızca ilk açılıştaki soruya "Aç" dersen okunur ve yalnızca cihazda, bellekte işlenir.
   Banka, şifre, giriş ve gizli sekme gibi hassas pencerelerin başlıkları hiç işlenmez. Kayda yalnızca tür yazılır
   ("video", "oyun" gibi), başlığın kendisi asla.
 - Bunların hiçbiri diske, günlüğe ya da ağa gitmez.
-- **Günlük dosyası:** yalnızca uyarı ve hatalar `%APPDATA%\MasaustuMahallesi\logs` klasörüne yazılır (orası yazılamazsa
-  `%TEMP%\MasaustuMahallesi\logs`). En fazla 1 MB'tır, dolunca en eski kısım silinir; ağa gönderilmez. İçinde yalnızca
-  zaman, seviye ve teknik bilgi bulunur (örneğin "durum kaydı yazılamadı, dosya açılamadı"). Pencere başlıkları,
+- **Günlük dosyası:** uyarı ve hatalar ile ekran ve güncelleme olayları `%APPDATA%\MasaustuMahallesi\logs` klasörüne
+  yazılır (orası yazılamazsa `%TEMP%\MasaustuMahallesi\logs`). En fazla 1 MB'tır, dolunca en eski kısım silinir; ağa
+  gönderilmez. İçinde yalnızca zaman, seviye ve teknik bilgi bulunur (örneğin "durum kaydı yazılamadı, dosya açılamadı"). Pencere başlıkları,
   karakterlere verdiğin adlar, hitap, kullanıcı adın ve kullanıcı klasörünün yolu yazılmadan önce silinir.
+  **Tepsi → Yardım → Günlük klasörünü aç** klasörü açar; **Sorun bildirimi hazırla** aynı klasöre günlükleri ve sürüm
+  bilgisini içeren tek bir zip yazar. Hiçbir şey gönderilmez; istersen zip'i sen paylaşırsın.
 - **Kayıt uyarısı:** mahalle kayıtlarını diske yazamazsa (örneğin bir antivirüs engellerse) bir komşu seni uyarır,
   tepside "Kayıtlar yazılamıyor" satırı çıkar; tıklayınca veri klasörünün yeri ve antivirüste nasıl izin verileceği
   anlatılır.
@@ -255,8 +266,8 @@ ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
 
 - Windows 10 ya da 11, 64 bit
 - Yaklaşık 110 MB disk alanı
-- Kaynak kullanımı düşük tutulur: karakterler hareket ederken saniyede 30 kare, herkes boştayken 10, herkes uyurken ya da
-  mahalle gizliyken 5 kare çizilir.
+- Kaynak kullanımı düşük tutulur: karakterler hareket ederken saniyede 30 kare, herkes boştayken 10, herkes uyurken 5,
+  mahalle gizliyken (tam ekran, herkes gizli) 2 kare çizilir.
 
 ---
 
@@ -291,6 +302,21 @@ tepsiden **Herkes dışarı** yeter (varsayılan kısayol Ctrl+Alt+Shift+M: 2 sa
 </details>
 
 <details>
+<summary><b>Simge nerede, nasıl çıkarım?</b></summary>
+
+Saatin yanındaki tepsi simgesi (Luna'nın yüzü). Görünmüyorsa görev çubuğundaki **^** okuna tıkla. Simgeye tıkla:
+menüde **Çıkış** var. **Yardım → Nasıl çıkarım, ekran kararırsa?** aynı şeyi bir komşunun ağzından hatırlatır.
+</details>
+
+<details>
+<summary><b>Ekran karardı ya da dondu, ne yapayım?</b></summary>
+
+Herkes dışarı kısayoluna (varsayılan Ctrl+Alt+Shift+M) **bir kez** bas: mahalle ekranı yeniden çizer ve pencerelerini
+yeniden kurar. Düzelmezse tepsiden **Çıkış** deyip uygulamayı yeniden aç; sorun sürerse **Yardım → Sorun bildirimi
+hazırla** ile oluşan zip'i paylaşabilirsin.
+</details>
+
+<details>
 <summary><b>Verilerim nerede?</b></summary>
 
 `%APPDATA%\MasaustuMahallesi` klasöründe: ayarlar, karakterlerin kayıtları ve notların. Hepsi yalnızca senin
@@ -302,8 +328,8 @@ bilgisayarındadır.
 
 ## 🤔 Neden mahalleBaskısı?
 
-Projenin ilk adı "mahalle baskısı"ydı, çünkü bu komşular tam olarak bunu yapar: sen yazarken birbirlerini susturur,
-uzun süre mola vermezsen hatırlatır, maçı kaybedince "Bir dahakine." der, alışverişten sonra bütçe tablosunu sorarlar.
+Projenin ilk adı "mahalle baskısı"ydı, çünkü bu komşular tam olarak bunu yapar: sen yazarken (Klavye tepkileri açıksa)
+birbirlerini susturur, uzun süre mola vermezsen hatırlatır, maçı kaybedince "Bir dahakine." der, alışverişten sonra bütçe tablosunu sorarlar.
 Ama bu tatlı bir baskıdır: gördüklerini kimseye anlatmazlar, onaylamadığın hiçbir şeye dokunmazlar, sıkıldığında
 **Herkes dışarı** dersen çaylarını alıp giderler.
 
