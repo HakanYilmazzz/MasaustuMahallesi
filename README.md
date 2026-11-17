@@ -250,7 +250,16 @@ ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
   **sanatçı adı** (şarkı adı değil) 30 gün saklanır ve gazetedeki "haftanın sanatçısı" bundan çıkar; bu yalnızca başlık
   okumaya izin verdiysen olur, izni kapatınca kayıtlı sanatçı adları silinir. Oyun serileri başlıktan değil, uygulamanın
   bilinen oyunlar listesindeki oyun adıyla tutulur.
-- Klavye, ses ve imleç bilgilerinin hiçbiri diske, günlüğe ya da ağa gitmez.
+- **Toplantı ve ekran paylaşımı:** toplantıda karakterler susar ve (Ayarlar → Pencere tepkileri → **Ekran paylaşımında
+  gizlen**, varsayılan açık) paylaşılan ya da kaydedilen görüntüde görünmez; toplantı bitince yeniden görünür. Normal
+  ekran alıntılarında ve kayıtlarda karakterler görünmeye devam eder. Toplantı şunlardan anlaşılır: Windows'un sunum ya
+  da tam ekran durumu; ön planda Teams, Zoom ya da Webex (tarayıcıdaki toplantı yalnızca başlık okumaya izin verdiysen);
+  bir de toplantı uygulaması açıkken Windows'un **"mikrofon ya da kamera şu an kullanımda"** bilgisi. Bu bilgi yalnızca
+  okunur: mikrofona ve kameraya hiçbir zaman erişilmez, ses ya da görüntü alınmaz, hangi uygulamanın kullandığı okunmaz.
+  Ayarlar → Pencere tepkileri → **Mikrofon ve kamera kullanımı** ile kapatılabilir. Toplantı uygulaması açık mı diye çalışan
+  uygulamaların adları yalnızca bu listeyle karşılaştırılır; hiçbir yere yazılmaz.
+- Klavye, ses, imleç, mikrofon/kamera kullanımı ve toplantı bilgilerinin hiçbiri diske, günlüğe ya da ağa gitmez
+  (günlükte yalnızca "toplantı başladı/bitti" satırı bulunur; uygulama adı yazılmaz).
 - **Günlük dosyası:** uyarı ve hatalar ile ekran ve güncelleme olayları `%APPDATA%\MasaustuMahallesi\logs` klasörüne
   yazılır (orası yazılamazsa `%TEMP%\MasaustuMahallesi\logs`). En fazla 1 MB'tır, dolunca en eski kısım silinir; ağa
   gönderilmez. İçinde yalnızca zaman, seviye ve teknik bilgi bulunur (örneğin "durum kaydı yazılamadı, dosya açılamadı").
@@ -283,8 +292,8 @@ ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
 <details>
 <summary><b>Oyun oynarken engel olur mu?</b></summary>
 
-Hayır. Tam ekran bir uygulamanın açık olduğu monitörde hiçbir şey çizilmez ve kare hızı düşer. Toplantı ya da sunum
-sırasında balonlar susar.
+Hayır. Tam ekran bir uygulamanın açık olduğu monitörde hiçbir şey çizilmez ve kare hızı düşer. Toplantı, ekran
+paylaşımı ya da sunum sırasında balonlar susar ve mahalle paylaşılan görüntüde görünmez (Gizlilik bölümüne bak).
 </details>
 
 <details>
@@ -339,6 +348,9 @@ Hepsi yalnızca senin bilgisayarındadır. `%APPDATA%\MasaustuMahallesi` içinde
 | Masaüstü simge konumları | `simge_konumlari\` | silinmez |
 | Güncelleme bilgisi, son doğrulanmış sürüm listesi, kurulum günlüğü | `guncelleme\`, `guncellemeler.json`, `paket_kurallari.json` | kurulum dosyası kurulumdan sonra silinir |
 | Günlük ve sorun bildirimi zip'leri | `logs\` | günlük en çok 1 MB |
+
+Tutulmayanlar: mikrofon ve kamera "kullanımda" bilgisi, toplantı uygulaması bilgisi, klavye, ses ve imleç bilgileri
+yalnızca bellekte kullanılır, hiçbir dosyaya yazılmaz (ayarlarda yalnızca açık/kapalı seçimi durur).
 
 Ayrıca: haftalık yedek zip'leri `Belgeler\Mahalle Yedekleri` içinde; kurulumda verdiğin adlar kayıt defterinde
 `HKCU\Software\MasaustuMahallesi`; "Windows ile başlat" seçimi `HKCU\...\Run` içinde; kurulum bilgisi program klasöründeki
