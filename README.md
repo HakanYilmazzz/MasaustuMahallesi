@@ -234,7 +234,7 @@ ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
 
 - **Hiçbir veri dışarı gönderilmez.** Uygulama yalnızca güncelleme denetimi için GitHub'daki sürüm listesine bağlanır
   (açılıştan 90 sn sonra ve yaklaşık 15 dakikada bir; liste değişmemişse yeniden indirilmez; güncellemeler **Kapalı**
-  ise hiç bağlanmaz). İnternetin gidip geldiğini Windows'a sorar, kendisi bağlantı kurmaz. Hava durumu bile hayalidir.
+  ise hiç bağlanmaz, **Şimdi denetle** de kapalıdır). İnternetin gidip geldiğini Windows'a sorar, kendisi bağlantı kurmaz. Hava durumu bile hayalidir.
 - **Klavye ve fare kancası yok.** Uygulama tuşlara ya da tıklamalara sistem genelinde kanca takmaz; girdiyi geciktirmez,
   araya girmez.
 - **Klavye:** hangi tuşa basıldığı hiç okunmaz. "Yazıyor" algısı yalnızca Windows'un bildirdiği son girdi zamanından
@@ -246,19 +246,26 @@ ayarların ve kayıtların yalnızca sorulduğunda "Evet" dersen silinir.
   şekilde gider.
 - **Pencere başlıkları:** yalnızca ilk açılıştaki soruya "Aç" dersen okunur ve yalnızca cihazda, bellekte işlenir.
   Banka, şifre, giriş ve gizli sekme gibi hassas pencerelerin başlıkları hiç işlenmez. Kayda yalnızca tür yazılır
-  ("video", "oyun" gibi), başlığın kendisi asla.
-- Bunların hiçbiri diske, günlüğe ya da ağa gitmez.
+  ("video", "oyun" gibi), başlığın kendisi asla. **Tek istisna:** müzik çalarken "Bu şarkı nasıl?" oylaması için
+  **sanatçı adı** (şarkı adı değil) 30 gün saklanır ve gazetedeki "haftanın sanatçısı" bundan çıkar; bu yalnızca başlık
+  okumaya izin verdiysen olur, izni kapatınca kayıtlı sanatçı adları silinir. Oyun serileri başlıktan değil, uygulamanın
+  bilinen oyunlar listesindeki oyun adıyla tutulur.
+- Klavye, ses ve imleç bilgilerinin hiçbiri diske, günlüğe ya da ağa gitmez.
 - **Günlük dosyası:** uyarı ve hatalar ile ekran ve güncelleme olayları `%APPDATA%\MasaustuMahallesi\logs` klasörüne
   yazılır (orası yazılamazsa `%TEMP%\MasaustuMahallesi\logs`). En fazla 1 MB'tır, dolunca en eski kısım silinir; ağa
-  gönderilmez. İçinde yalnızca zaman, seviye ve teknik bilgi bulunur (örneğin "durum kaydı yazılamadı, dosya açılamadı"). Pencere başlıkları,
-  karakterlere verdiğin adlar, hitap, kullanıcı adın ve kullanıcı klasörünün yolu yazılmadan önce silinir.
+  gönderilmez. İçinde yalnızca zaman, seviye ve teknik bilgi bulunur (örneğin "durum kaydı yazılamadı, dosya açılamadı").
+  Pencere başlıkları, karakterlere verdiğin adlar, hitap, kullanıcı adın ve bütün dosya yolları (dosya adıyla birlikte)
+  yazılmadan önce silinir.
   **Tepsi → Yardım → Günlük klasörünü aç** klasörü açar; **Sorun bildirimi hazırla** aynı klasöre günlükleri ve sürüm
   bilgisini içeren tek bir zip yazar. Hiçbir şey gönderilmez; istersen zip'i sen paylaşırsın.
 - **Kayıt uyarısı:** mahalle kayıtlarını diske yazamazsa (örneğin bir antivirüs engellerse) bir komşu seni uyarır,
   tepside "Kayıtlar yazılamıyor" satırı çıkar; tıklayınca veri klasörünün yeri ve antivirüste nasıl izin verileceği
   anlatılır.
 - **Dosyalar:** dosya taşıma kendiliğinden yapılmaz; Kâmil'in planı yalnızca senin onayınla uygulanır, her adım geri
-  alınabilir, hiçbir dosya silinmez.
+  alınabilir, hiçbir dosya silinmez. Taşımadan önce her dosyanın bir **güvenlik kopyası** alınır (Ayarlar → Düzen'den
+  kapatılabilir). Uygulama bu kopyaları kendiliğinden silmez: toplam boyutu Ayarlar → Düzen'de görünür, 1 GB'ı geçince
+  bir kez haber verilir; istersen oradaki onaylı düğmeyle 30 günden eski kopyaları silebilirsin. Tepsideki **Geri al**
+  son 7 günün düzenini kapsar; daha eskisi Ayarlar → Düzen → **İşlem geçmişi**'nden, özet ve onayla geri alınır.
 
 ---
 
@@ -319,8 +326,24 @@ hazırla** ile oluşan zip'i paylaşabilirsin.
 <details>
 <summary><b>Verilerim nerede?</b></summary>
 
-`%APPDATA%\MasaustuMahallesi` klasöründe: ayarlar, karakterlerin kayıtları ve notların. Hepsi yalnızca senin
-bilgisayarındadır.
+Hepsi yalnızca senin bilgisayarındadır. `%APPDATA%\MasaustuMahallesi` içinde:
+
+| Ne | Nerede | Ne kadar kalır |
+|---|---|---|
+| Ayarlar (hitap, dokunma listesindeki dosya adları, seçtiğin masaüstü ve yedek klasörleri dahil) | `settings.json` | sen değiştirene kadar |
+| Mahallenin durumu (sayaçlar, anılar, ilişkiler; başlık izni varsa sanatçı adları) | `state.json` | anılar ve oylar en çok 30 gün / 300 kayıt |
+| Karakterlerin kayıtları ve sürüm yedekleri | `characters\` | yedekler karakter başına son 3 sürüm |
+| Notlar ve hatırlatıcılar, günün sayaçları | `notes.json`, `today.json` | en çok 12 not |
+| Dosya düzeni günlükleri (taşınan dosyaların adları ve yolları) | `journal\` | silinmez (geri alma için) |
+| Taşınan dosyaların güvenlik kopyaları | `guvenlik\` | silinmez; Ayarlar → Düzen'den elle |
+| Masaüstü simge konumları | `simge_konumlari\` | silinmez |
+| Güncelleme bilgisi, son doğrulanmış sürüm listesi, kurulum günlüğü | `guncelleme\`, `guncellemeler.json`, `paket_kurallari.json` | kurulum dosyası kurulumdan sonra silinir |
+| Günlük ve sorun bildirimi zip'leri | `logs\` | günlük en çok 1 MB |
+
+Ayrıca: haftalık yedek zip'leri `Belgeler\Mahalle Yedekleri` içinde; kurulumda verdiğin adlar kayıt defterinde
+`HKCU\Software\MasaustuMahallesi`; "Windows ile başlat" seçimi `HKCU\...\Run` içinde; kurulum bilgisi program klasöründeki
+`kurulum.json`'da. Kaldırırken "Ayarlar, kayıtlar ve notlar da silinsin mi?" sorusuna "Evet" dersen `%APPDATA%` klasörü
+silinir.
 </details>
 
 ---
